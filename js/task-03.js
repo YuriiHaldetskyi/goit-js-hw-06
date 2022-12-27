@@ -16,9 +16,6 @@ const images = [
 const listGallery = document.querySelector(".gallery");
 
 const markup = images.map(({ url, alt }) => {
-  const image = document.createElement("img");
-  image.src = url;
-  image.alt = alt;
-  image.classList.add("img");
-  listGallery.append(image);
+  return `<li> <img src="${url}" alt="${alt}" class="img"></li>`;
 });
+listGallery.insertAdjacentHTML("beforeend", markup.join(""));
